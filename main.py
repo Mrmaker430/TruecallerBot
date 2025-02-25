@@ -1,4 +1,6 @@
+import threading
 import requests
+from flask import Flask
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pymongo import MongoClient
@@ -7,7 +9,7 @@ from pymongo import MongoClient
 API_ID = 14050586
 API_HASH = "42a60d9c657b106370c79bb0a8ac560c"
 BOT_TOKEN = "7784061051:AAHXad6hJ0SNWn5MDR8SZuHE_le5wCqqI-s"
-OWNER_ID = "6258915779"
+OWNER_ID = 6258915779  # Change to int (remove quotes)
 
 # MongoDB Connection
 MONGO_URL = "mongodb+srv://Krishna:pss968048@cluster0.4rfuzro.mongodb.net/?retryWrites=true&w=majority"
@@ -27,21 +29,7 @@ START_CAPTION = """\
 │◍ Hello Everyone,
 │◍ [ᴛʜɪs ɪs ᴛʀᴜᴇᴄᴀʟʟᴇʀʙᴏᴛ ʙʏ Aɴsʜ](https://t.me/cyber_ansh)
 └──────────────────────•
-
-•──────────────────────•
-**Features:**
-◍ **Nᴜᴍʙᴇʀ Lᴏᴏᴋᴜᴘ** – Cᴀʟʟᴇʀ ᴋᴀ ɴᴀᴀᴍ ᴀᴜʀ ᴅᴇᴛᴀɪʟs ᴘᴀᴛᴀ ᴋᴀʀᴇ.
-◍ **Sᴘᴀᴍ Aʟᴇʀᴛ** – Fʀᴀᴜᴅ ʏᴀ sᴘᴀᴍ ɴᴜᴍʙᴇʀs ᴅᴇᴛᴇᴄᴛ ᴋᴀʀᴇ.
-◍ **Lɪᴠᴇ Cᴀʟʟᴇʀ ID** – Cʜᴀᴛs ᴍᴇ ɴᴜᴍʙᴇʀ ᴋᴀ ɪɴғᴏ sʜᴏᴡ ᴋᴀʀᴇ.
-◍ **Cᴀʟʟ Aʟᴇʀᴛ** – Aᴀɴᴇ ᴡᴀʟᴇ ᴄᴀʟʟs ᴋᴇ ᴅᴇᴛᴀɪʟs ʙᴀᴛᴀʏᴇ.
-◍ **Bᴜʟᴋ Sᴇᴀʀᴄʜ** – Eᴋ sᴀᴛʜ ᴍᴜʟᴛɪᴘʟᴇ ɴᴜᴍʙᴇʀs ᴄʜᴇᴄᴋ ᴋᴀʀᴇ.
-◍ **Pʀɪᴠᴀᴄʏ Sᴀғᴇ** – Usᴇʀ ᴅᴀᴛᴀ sᴇᴄᴜʀᴇ ᴀᴜʀ ᴘʀɪᴠᴀᴛᴇ ʀᴀʜᴇ.
-
-📩 **Contact:** @cyber_ansh for support.
-
-•──────────────────────•
-❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ ➟ [Ansh](https://t.me/cyber_ansh)
-•──────────────────────•
+...
 """
 
 # Initialize Telegram Bot
@@ -86,7 +74,7 @@ def fetch_number_details(_, message):
         result = "❌ Failed to fetch data. Please try again later."
     message.reply_text(result)
 
-@bot.on_message(filters.command("broadcast") & filters.user(OWNER_ID))  # Replace OWNER_ID with your Telegram ID
+@bot.on_message(filters.command("broadcast") & filters.user(OWNER_ID))
 def broadcast(_, message):
     text = message.text.split(" ", 1)
     if len(text) < 2:
@@ -103,5 +91,19 @@ def broadcast(_, message):
             pass
     message.reply_text(f"✅ Broadcast sent to {count} users.")
 
-# Start the bot
+# Flask Web Server
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Truecaller Bot is Running!"
+
+def run_flask():
+    app.run(host="0.0.0.0", port=8000)
+
+# Run Flask in a separate thread
+flask_thread = threading.Thread(target=run_flask)
+flask_thread.start()
+
+# Start the Telegram bot
 bot.run()
