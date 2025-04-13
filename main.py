@@ -8,7 +8,7 @@ from pymongo import MongoClient
 # Telegram Bot API Credentials
 API_ID = 14050586
 API_HASH = "42a60d9c657b106370c79bb0a8ac560c"
-BOT_TOKEN = "7784061051:AAHXad6hJ0SNWn5MDR8SZuHE_le5wCqqI-s"
+BOT_TOKEN = "7784061051:AAEGnz2gS9ulTRaJQ9KYcSQChSY2BOFFd-Y"
 OWNER_ID = 6258915779  # Change to int (remove quotes)
 
 # MongoDB Connection
