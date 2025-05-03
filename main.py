@@ -1,15 +1,22 @@
+
+
+import os
 import threading
 import requests
 from flask import Flask
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pymongo import MongoClient
+from dotenv import load_dotenv
 
-# Telegram Bot API Credentials
-API_ID = 14050586
-API_HASH = "42a60d9c657b106370c79bb0a8ac560c"
-BOT_TOKEN = "7784061051:AAEGnz2gS9ulTRaJQ9KYcSQChSY2BOFFd-Y"
-OWNER_ID = 6258915779  # Change to int (remove quotes)
+load_dotenv()  # Loads values from .env
+
+# Telegram Bot API Credentials (securely loaded)
+API_ID = int(os.getenv("API_ID","14050586"))
+API_HASH = os.getenv("API_HASH","42a60d9c657b106370c79bb0a8ac560c")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+OWNER_ID = int(os.getenv("OWNER_ID","6258915779"))
+
 
 # MongoDB Connection
 MONGO_URL = "mongodb+srv://Krishna:pss968048@cluster0.4rfuzro.mongodb.net/?retryWrites=true&w=majority"
