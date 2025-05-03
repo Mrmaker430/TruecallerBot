@@ -16,7 +16,7 @@ API_ID = int(os.getenv("API_ID","14050586"))
 API_HASH = os.getenv("API_HASH","42a60d9c657b106370c79bb0a8ac560c")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 OWNER_ID = int(os.getenv("OWNER_ID","6258915779"))
-
+API_URL = os.getenv("API_URL")
 
 # MongoDB Connection
 MONGO_URL = "mongodb+srv://Krishna:pss968048@cluster0.4rfuzro.mongodb.net/?retryWrites=true&w=majority"
@@ -24,8 +24,6 @@ client = MongoClient(MONGO_URL)
 db = client["TruecallerBot"]
 users_collection = db["users"]
 
-# Truecaller API Endpoint
-API_URL = "https://worm.ytansh038.workers.dev/?number="
 
 # Image URL for Start Message
 START_IMAGE = "https://envs.sh/Q0_.jpg"
