@@ -32,7 +32,7 @@ START_IMAGE = "https://envs.sh/Q0_.jpg"
 START_CAPTION = """\
 ┌────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼──────• 
 │◍ Hello Everyone,
-│◍ [ᴛʜɪs ɪs ᴛʀᴜᴇᴄᴀʟʟᴇʀʙᴏᴛ ʙʏ Aɴsʜ](https://t.me/lucifer_seam)
+│◍ [ᴛʜɪs ɪs ᴛʀᴜᴇᴄᴀʟʟᴇʀʙᴏᴛ ʙʏ Lᴜᴄʏ](https://t.me/lucifer_seam)
 └──────────────────────•
 
 •──────────────────────•
