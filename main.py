@@ -32,7 +32,7 @@ START_IMAGE = "https://envs.sh/Q0_.jpg"
 START_CAPTION = """\
 ┌────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼──────• 
 │◍ Hello Everyone,
-│◍ [ᴛʜɪs ɪs ᴛʀᴜᴇᴄᴀʟʟᴇʀʙᴏᴛ ʙʏ Aɴsʜ](https://t.me/cyber_ansh)
+│◍ [ᴛʜɪs ɪs ᴛʀᴜᴇᴄᴀʟʟᴇʀʙᴏᴛ ʙʏ Aɴsʜ](https://t.me/lucifer_seam)
 └──────────────────────•
 
 •──────────────────────•
@@ -44,10 +44,10 @@ START_CAPTION = """\
 ◍ **Bᴜʟᴋ Sᴇᴀʀᴄʜ** – Eᴋ sᴀᴛʜ ᴍᴜʟᴛɪᴘʟᴇ ɴᴜᴍʙᴇʀs ᴄʜᴇᴄᴋ ᴋᴀʀᴇ.
 ◍ **Pʀɪᴠᴀᴄʏ Sᴀғᴇ** – Usᴇʀ ᴅᴀᴛᴀ sᴇᴄᴜʀᴇ ᴀᴜʀ ᴘʀɪᴠᴀᴛᴇ ʀᴀʜᴇ.
 
-📩 **Contact:** @cyber_ansh for support.
+📩 **Contact:** @lucifer_seam for support.
 
 •──────────────────────•
-❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ ➟ [Ansh](https://t.me/cyber_ansh)
+❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ ➟ [lucifer](https://t.me/lucifer_seam)
 •──────────────────────•
 """
 
@@ -61,7 +61,7 @@ def start(_, message):
         users_collection.insert_one({"user_id": user_id})
     
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/cyber_ansh")],
+        [InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/lucifer_seam")],
         [InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/+QAn371T81bc0MGY1"),
          InlineKeyboardButton("ᴀᴘɪ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+7AUuVrP8F69kYWY1")]
     ])
@@ -83,11 +83,11 @@ def fetch_number_details(_, message):
         data = response.json()
         result = f"""
  **Number:** {data.get('international_format', 'N/A')}
- **Country:** {data.get('location', 'N/A')}
+**Country:** {data.get('location', 'N/A')}
 
 **🔍 Truecaller Says :**
 
-**Name:** {data.get('Truecaller', 'No name found')}
+**Name:** {data.get('Unknown', 'No name found')}
 **Carrier:** {data.get('carrier', 'N/A')}
 **Location:** {', '.join(data.get('timezones', []))}
 
