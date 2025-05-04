@@ -82,12 +82,19 @@ def fetch_number_details(_, message):
     if response.status_code == 200:
         data = response.json()
         result = f"""
-📞 **Phone Number:** {data.get('international_format', 'N/A')}
-📡 **Carrier:** {data.get('carrier', 'N/A')}
-🌍 **Location:** {data.get('location', 'N/A')}
-⏳ **Timezone:** {', '.join(data.get('timezones', []))}
-🔍 **Truecaller Name:** {data.get('Truecaller', 'No name found')}
-❓ **Unknown Data:** {data.get('Unknown', 'N/A')}
+ **Number:** {data.get('international_format', 'N/A')}
+ **Country:** {data.get('location', 'N/A')}
+
+**🔍 Truecaller Says :**
+
+**Name:** {data.get('Truecaller', 'No name found')}
+**Carrier:** {data.get('carrier', 'N/A')}
+**Location:** {', '.join(data.get('timezones', []))}
+
+**🔍Unknown Says:**
+**Unknown Data:** {data.get('Unknown', 'N/A')}
+
+[WhatsApp](https://wa.me/{phone_number}) | [Telegram](https://t.me/{phone_number})
         """
     else:
         result = "❌ Failed to fetch data. Please try again later."
