@@ -19,7 +19,7 @@ OWNER_ID = int(os.getenv("OWNER_ID","1773034985"))
 API_URL = os.getenv("API_URL")
 
 # MongoDB Connection
-MONGO_URL = ""
+MONGO_URL = "mongodb+srv://montukaka818:montukaka818@cluster0.gh5kx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = MongoClient(MONGO_URL)
 db = client["TruecallerBot"]
 users_collection = db["users"]
