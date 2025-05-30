@@ -12,14 +12,14 @@ from dotenv import load_dotenv
 load_dotenv()  # Loads values from .env
 
 # Telegram Bot API Credentials (securely loaded)
-API_ID = int(os.getenv("API_ID","14050586"))
-API_HASH = os.getenv("API_HASH","42a60d9c657b106370c79bb0a8ac560c")
+API_ID = int(os.getenv("API_ID",""))
+API_HASH = os.getenv("API_HASH","")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-OWNER_ID = int(os.getenv("OWNER_ID","6258915779"))
+OWNER_ID = int(os.getenv("OWNER_ID",""))
 API_URL = os.getenv("API_URL")
 
 # MongoDB Connection
-MONGO_URL = "mongodb+srv://Krishna:pss968048@cluster0.4rfuzro.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URL = ""
 client = MongoClient(MONGO_URL)
 db = client["TruecallerBot"]
 users_collection = db["users"]
