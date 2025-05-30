@@ -1,5 +1,4 @@
 
-
 import os
 import threading
 import requests
@@ -32,22 +31,16 @@ START_IMAGE = "https://envs.sh/Q0_.jpg"
 START_CAPTION = """\
 ┌────── ˹ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ˼──────• 
 │◍ Hello Everyone,
-│◍ [ᴛʜɪs ɪs ᴛʀᴜᴇᴄᴀʟʟᴇʀʙᴏᴛ ʙʏ Lᴜᴄʏ](https://t.me/lucifer_seam)
+│◍ [ᴛʜɪs ɪs ᴛʀᴜᴇᴄᴀʟʟᴇʀʙᴏᴛ ʙʏ ༄ᶦᶰᵈ᭄࿐𝘗𝘢𝘳𝘢𝘥𝟎𝘹](https://t.me/pArAd0X6)
 └──────────────────────•
 
 •──────────────────────•
 **Features:**
 ◍ **Nᴜᴍʙᴇʀ Lᴏᴏᴋᴜᴘ** – Cᴀʟʟᴇʀ ᴋᴀ ɴᴀᴀᴍ ᴀᴜʀ ᴅᴇᴛᴀɪʟs ᴘᴀᴛᴀ ᴋᴀʀᴇ.
-◍ **Sᴘᴀᴍ Aʟᴇʀᴛ** – Fʀᴀᴜᴅ ʏᴀ sᴘᴀᴍ ɴᴜᴍʙᴇʀs ᴅᴇᴛᴇᴄᴛ ᴋᴀʀᴇ.
-◍ **Lɪᴠᴇ Cᴀʟʟᴇʀ ID** – Cʜᴀᴛs ᴍᴇ ɴᴜᴍʙᴇʀ ᴋᴀ ɪɴғᴏ sʜᴏᴡ ᴋᴀʀᴇ.
-◍ **Cᴀʟʟ Aʟᴇʀᴛ** – Aᴀɴᴇ ᴡᴀʟᴇ ᴄᴀʟʟs ᴋᴇ ᴅᴇᴛᴀɪʟs ʙᴀᴛᴀʏᴇ.
 ◍ **Bᴜʟᴋ Sᴇᴀʀᴄʜ** – Eᴋ sᴀᴛʜ ᴍᴜʟᴛɪᴘʟᴇ ɴᴜᴍʙᴇʀs ᴄʜᴇᴄᴋ ᴋᴀʀᴇ.
 ◍ **Pʀɪᴠᴀᴄʏ Sᴀғᴇ** – Usᴇʀ ᴅᴀᴛᴀ sᴇᴄᴜʀᴇ ᴀᴜʀ ᴘʀɪᴠᴀᴛᴇ ʀᴀʜᴇ.
-
-📩 **Contact:** @lucifer_seam for support.
-
 •──────────────────────•
-❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ ➟ [lucifer](https://t.me/lucifer_seam)
+❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ ➟ [༄ᶦᶰᵈ᭄࿐𝘗𝘢𝘳𝘢𝘥𝟎𝘹](https://t.me/pArAd0X6)
 •──────────────────────•
 """
 
@@ -61,9 +54,9 @@ def start(_, message):
         users_collection.insert_one({"user_id": user_id})
     
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/lucifer_seam")],
-        [InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/+QAn371T81bc0MGY1"),
-         InlineKeyboardButton("ᴀᴘɪ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+7AUuVrP8F69kYWY1")]
+        [InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/pArAd0X6")],
+        [InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/world_of_pardox76"),
+         InlineKeyboardButton("ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/world_0f_parad0x")]
     ])
     
     message.reply_photo(
@@ -82,22 +75,22 @@ def fetch_number_details(_, message):
     if response.status_code == 200:
         data = response.json()
         result = f"""
- **Number:** {data.get('international_format', 'N/A')}
-**Country:** {data.get('location', 'N/A')}
+ **ɴᴜᴍʙᴇʀ:** {data.get('international_format', 'N/A')}
+**ᴄᴏᴜɴᴛʀʏ:** {data.get('location', 'N/A')}
 
-**🔍 Truecaller Says :**
+**🔍 𝖳𝗋𝗎𝖾𝖼𝖺𝗅𝗅𝖾𝗋 𝖲𝖺𝗒𝗌 :**
 
 **Name:** {data.get('Unknown', 'No name found')}
-**Carrier:** {data.get('carrier', 'N/A')}
-**Location:** {', '.join(data.get('timezones', []))}
+**ᴄᴏᴜɴᴛʀʏ:** {data.get('carrier', 'N/A')}
+**ʟᴏᴄᴀᴛɪᴏɴ:** {', '.join(data.get('timezones', []))}
 
-**🔍Unknown Says:**
-**Unknown Data:** {data.get('Unknown', 'N/A')}
+**🔍 𝖴𝗇𝗄𝗇𝗈𝗐𝗇 𝖲𝖺𝗒𝗌 :**
+**ᴜɴᴋɴᴏᴡɴ ᴅᴀᴛᴀ:** {data.get('Unknown', 'N/A')}
 
-[WhatsApp](https://wa.me/{phone_number}) | [Telegram](https://t.me/{phone_number})
+[𝗪𝗵𝗮𝘁𝘀𝗮𝗽𝗽](https://wa.me/{phone_number}) | [𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺](https://t.me/{phone_number})
         """
     else:
-        result = "❌ Failed to fetch data. Please try again later."
+        result = "❌ 𝖥𝖺𝗂𝗅𝖾𝖽 𝗍𝗈 𝖿𝖾𝗍𝖼𝗁 𝖽𝖺𝗍𝖺. 𝖯𝗅𝖾𝖺𝗌𝖾 𝗍𝗋𝗒 𝖺𝗀𝖺𝗂𝗇 𝗅𝖺𝗍𝖾𝗋."
     message.reply_text(result)
 
 @bot.on_message(filters.command("broadcast") & filters.user(OWNER_ID))
@@ -125,7 +118,7 @@ def home():
     return "Truecaller Bot is Running!"
 
 def run_flask():
-    app.run(host="0.0.0.0", port=8000)
+    app.run(host="0.0.0.0", port=8080)
 
 # Run Flask in a separate thread
 flask_thread = threading.Thread(target=run_flask)
